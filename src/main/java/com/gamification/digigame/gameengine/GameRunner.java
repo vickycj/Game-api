@@ -1,5 +1,6 @@
 package com.gamification.digigame.gameengine;
 
+@org.springframework.stereotype.Service
 public class GameRunner {
 
     private Service service = new Service();
