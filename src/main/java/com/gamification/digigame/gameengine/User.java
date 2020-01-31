@@ -10,17 +10,18 @@ public class User {
     private String userName;
     private int userId;
     private List<Animal> animalsObtained = new ArrayList<>();
-    private List<Task> tasksList = Rules.TASKS_LIST.gettasksList();
+    private List<Task> tasksList;
     private int currentLevel = Constants.LEVELS.LEVEL_1;
     private int tasksCompletedInCurrentLevel = 0;
     private boolean isLoyalCustomer = false;
     private boolean allTasksCompleted = false;
     private int totalTaskCompleted = 0;
 
-    public User(String userName, int userId, boolean isLoyalCustomer) {
+    public User(String userName, int userId, boolean isLoyalCustomer, List<Task> tasks) {
         this.userName = userName;
         this.userId = userId;
         this.isLoyalCustomer = isLoyalCustomer;
+        this.tasksList = tasks;
     }
 
     public String getUserName() {

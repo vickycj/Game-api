@@ -44,11 +44,13 @@ public class Service {
     }
 
     private void updateUserDetails(User user) {
-        if (user.getTasksCompletedInCurrentLevel() == 2) {
+        if (user.getTasksCompletedInCurrentLevel() == 2 && user.getCurrentLevel() != Constants.LEVELS.LEVEL_3) {
             user.setCurrentLevel(user.getCurrentLevel() + 1);
             user.setTasksCompletedInCurrentLevel(0);
         } else {
-            user.setTasksCompletedInCurrentLevel(user.getTasksCompletedInCurrentLevel() + 1);
+            if(user.getTasksCompletedInCurrentLevel() < 2) {
+                user.setTasksCompletedInCurrentLevel(user.getTasksCompletedInCurrentLevel() + 1);
+            }
         }
         user.getAnimalsObtained().add(generateAnimal.getAnimal(user, user.isLoyalCustomer()));
     }

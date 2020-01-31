@@ -10,9 +10,9 @@ public class Persistance {
     private List<User> userList = new ArrayList<>();
 
     private Persistance() {
-        User user01 = new User("user01", Constants.USERS.user01,true);
+        User user01 = new User("user01", Constants.USERS.user01,true, Rules.TASKS_LIST.gettasksList());
         userList.add(user01);
-        User user02 = new User("user02", Constants.USERS.user02, false);
+        User user02 = new User("user02", Constants.USERS.user02, false,Rules.TASKS_LIST.gettasksList());
         userList.add(user02);
     }
 

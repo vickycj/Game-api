@@ -39,13 +39,9 @@ public class Rules {
         private static final String TASK_7 = "Invest in Term Deposit/ Fixed Deposit";
         private static final String TASK_8 = "Start Mutual Fund";
         private static final String TASK_9 = "Refer a Friend";
-
-
-
-
         private static List<Task> tasks =  new ArrayList<>();
 
-        public static List<Task> gettasksList(){
+        static {
             tasks.add(new Task(1, TASK_1, Constants.LEVELS.LEVEL_1));
             tasks.add(new Task(2, TASK_2, Constants.LEVELS.LEVEL_1));
             tasks.add(new Task(3, TASK_3, Constants.LEVELS.LEVEL_1));
@@ -55,7 +51,9 @@ public class Rules {
             tasks.add(new Task(7, TASK_7, Constants.LEVELS.LEVEL_3));
             tasks.add(new Task(8, TASK_8, Constants.LEVELS.LEVEL_3));
             tasks.add(new Task(9, TASK_9, Constants.LEVELS.LEVEL_3));
+        }
 
+        public static List<Task> gettasksList(){
             return tasks;
         }
     }
